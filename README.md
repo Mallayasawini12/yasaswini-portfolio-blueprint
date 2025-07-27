@@ -1,50 +1,50 @@
-# Welcome to your Lovable project
+# Portfolio Project
 
-## Project info
-
-**URL**: https://lovable.dev/projects/121ce1ae-defb-4171-a367-968b3db82ae3
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/121ce1ae-defb-4171-a367-968b3db82ae3) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## How to run this project
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Step 2: Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Technologies Used
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## Development Options
+
+**Use your preferred IDE** Clone the repository and work locally using your favorite IDE.
+
+**Edit directly in GitHub**
+
+- Navigate to the desired file(s)
+- Click the "Edit" button (pencil icon)
+- Make changes and commit
 
 **Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
+- Click on "Code" button (green)
+- Select "Codespaces" tab
+- Click "New codespace"
 - Click on the "Code" button (green button) near the top right.
 - Select the "Codespaces" tab.
 - Click on "New codespace" to launch a new Codespace environment.
