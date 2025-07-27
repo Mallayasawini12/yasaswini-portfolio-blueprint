@@ -59,12 +59,13 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-gradient-tech floating-elements relative">
+      <div className="absolute inset-0 cyber-grid opacity-5"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl text-primary mb-4">
+            <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neon-primary mb-4 glow-primary">
               Projects & Work
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-inter">
@@ -78,7 +79,7 @@ const ProjectsSection = () => {
             {projects.map((project, index) => (
               <Card 
                 key={index} 
-                className="group hover-lift transition-smooth shadow-card overflow-hidden animate-fade-in"
+                className="group hover-lift-neon transition-float shadow-floating overflow-hidden animate-scale-in glass-neon border border-primary/20"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardHeader className="p-0">
@@ -86,9 +87,9 @@ const ProjectsSection = () => {
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-48 object-cover transition-smooth group-hover:scale-105"
+                      className="w-full h-48 object-cover transition-float group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-smooth"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-glow"></div>
                     <div className="absolute top-4 left-4">
                       <div className={`p-2 rounded-full bg-${project.color} text-${project.color}-foreground`}>
                         {project.icon}
@@ -109,7 +110,7 @@ const ProjectsSection = () => {
                     </Badge>
                   </div>
                   
-                  <h3 className="font-playfair font-semibold text-xl text-primary mb-3 group-hover:text-accent transition-smooth">
+                  <h3 className="font-playfair font-semibold text-xl text-neon-primary mb-3 group-hover:text-neon-accent transition-glow">
                     {project.title}
                   </h3>
                   
@@ -122,7 +123,7 @@ const ProjectsSection = () => {
                       <Badge 
                         key={techIndex} 
                         variant="outline" 
-                        className="text-xs border-primary/20 hover:border-accent transition-smooth"
+                        className="text-xs border-primary/30 hover:border-neon-accent transition-glow hover:glow-accent"
                       >
                         {tech}
                       </Badge>
@@ -135,7 +136,7 @@ const ProjectsSection = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="text-xs hover:bg-primary hover:text-primary-foreground transition-smooth"
+                      className="text-xs hover:bg-primary hover:text-primary-foreground transition-glow hover-glow-primary border-primary/30"
                     >
                       <Github className="w-3 h-3 mr-1" />
                       Code
@@ -143,7 +144,7 @@ const ProjectsSection = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="text-xs hover:bg-accent hover:text-accent-foreground transition-smooth"
+                      className="text-xs hover:bg-accent hover:text-accent-foreground transition-glow hover-glow-accent border-accent/30"
                     >
                       <ExternalLink className="w-3 h-3 mr-1" />
                       Demo
@@ -153,7 +154,7 @@ const ProjectsSection = () => {
                   <Button 
                     variant="ghost" 
                     size="sm"
-                    className="text-xs text-muted-foreground hover:text-primary transition-smooth"
+                    className="text-xs text-muted-foreground hover:text-neon-primary transition-glow"
                   >
                     Learn More →
                   </Button>
@@ -164,17 +165,17 @@ const ProjectsSection = () => {
 
           {/* Call to Action */}
           <div className="text-center mt-12 animate-fade-in delay-500">
-            <div className="p-8 bg-gradient-hero rounded-2xl text-white">
+            <div className="p-8 bg-gradient-neon rounded-2xl text-background shadow-floating border border-primary/30 animate-glow-pulse">
               <h3 className="font-playfair font-semibold text-2xl mb-4">
                 Interested in Collaboration?
               </h3>
-              <p className="text-white/90 mb-6 max-w-md mx-auto font-inter">
+              <p className="text-background/90 mb-6 max-w-md mx-auto font-inter">
                 I'm always excited to work on new projects and learn from experienced developers.
               </p>
               <Button 
                 variant="secondary"
                 size="lg"
-                className="bg-white text-primary hover:bg-white/90 transition-smooth"
+                className="bg-background text-primary hover:bg-background/90 transition-glow hover-glow-primary"
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Let's Connect

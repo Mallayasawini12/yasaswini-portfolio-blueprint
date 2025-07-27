@@ -23,11 +23,13 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 transition-smooth">
+    <nav className="fixed top-0 w-full glass-neon border-b border-primary/30 z-50 transition-glow cyber-grid">
+      {/* Neon scan line effect */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-tech-scan"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="font-playfair font-bold text-xl text-primary">
+          <div className="font-playfair font-bold text-xl text-neon-primary animate-neon-flicker">
             Yasaswini
           </div>
 
@@ -37,9 +39,10 @@ const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-accent transition-smooth font-medium"
+                className="text-foreground hover:text-neon-accent transition-glow font-medium relative group"
               >
-                {item.name}
+                <span className="relative z-10">{item.name}</span>
+                <div className="absolute inset-0 bg-accent/10 rounded-lg scale-0 group-hover:scale-100 transition-float opacity-0 group-hover:opacity-100"></div>
               </button>
             ))}
           </div>
@@ -50,7 +53,7 @@ const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground"
+              className="text-foreground hover:text-neon-primary hover-glow-primary transition-glow"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -59,13 +62,13 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
+          <div className="md:hidden animate-scale-in floating-elements">
+            <div className="px-2 pt-2 pb-3 space-y-1 glass-neon border-t border-primary/30">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-accent transition-smooth w-full text-left"
+                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-neon-accent transition-glow w-full text-left rounded-lg hover:bg-accent/10"
                 >
                   {item.name}
                 </button>

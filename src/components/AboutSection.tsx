@@ -35,12 +35,14 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-background to-secondary/30">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-gradient-tech floating-elements relative">
+      {/* Tech grid overlay */}
+      <div className="absolute inset-0 cyber-grid opacity-10"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl text-primary mb-4">
+            <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neon-primary mb-4 glow-primary">
               About Me
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-inter">
@@ -52,16 +54,16 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Personal Story */}
             <div className="animate-fade-in delay-100">
-              <div className="relative mb-8">
+              <div className="relative mb-8 scan-line">
                 <img 
                   src={aboutEducation} 
                   alt="Educational Journey" 
-                  className="w-full h-64 object-cover rounded-2xl shadow-card"
+                  className="w-full h-64 object-cover rounded-2xl shadow-floating hover-lift-neon transition-float border border-primary/20"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-accent/10 rounded-2xl"></div>
               </div>
               
-              <h3 className="font-playfair font-semibold text-2xl text-primary mb-4">
+              <h3 className="font-playfair font-semibold text-2xl text-neon-primary mb-4 animate-neon-flicker">
                 My Journey
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed font-inter">
@@ -77,13 +79,13 @@ const AboutSection = () => {
 
               {/* Personal Interests */}
               <div className="mt-8">
-                <h4 className="font-playfair font-semibold text-xl text-primary mb-4 flex items-center">
-                  <Heart className="w-5 h-5 mr-2 text-accent" />
+                <h4 className="font-playfair font-semibold text-xl text-neon-primary mb-4 flex items-center">
+                  <Heart className="w-5 h-5 mr-2 text-neon-accent animate-glow-pulse" />
                   Interests & Passions
                 </h4>
                 <div className="grid grid-cols-2 gap-4">
                   {interests.map((interest, index) => (
-                    <div key={index} className="p-4 bg-card rounded-lg shadow-sm border">
+                    <div key={index} className="p-4 glass-neon rounded-lg shadow-neon border border-primary/20 hover-glow-primary transition-glow">
                       <h5 className="font-inter font-medium text-foreground mb-1">{interest.name}</h5>
                       <p className="text-sm text-muted-foreground">{interest.description}</p>
                     </div>
@@ -94,27 +96,27 @@ const AboutSection = () => {
 
             {/* Education Timeline */}
             <div className="animate-fade-in delay-200">
-              <h3 className="font-playfair font-semibold text-2xl text-primary mb-8 flex items-center">
-                <MapPin className="w-6 h-6 mr-3 text-accent" />
+              <h3 className="font-playfair font-semibold text-2xl text-neon-primary mb-8 flex items-center">
+                <MapPin className="w-6 h-6 mr-3 text-neon-accent animate-float" />
                 Educational Journey
               </h3>
               
               <div className="space-y-6">
                 {education.map((edu, index) => (
-                  <Card key={index} className="hover-lift transition-smooth shadow-card border-l-4 border-l-primary">
+                  <Card key={index} className="hover-lift-neon transition-float shadow-floating border-l-4 border-l-neon-primary glow-primary glass-neon">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="flex-shrink-0 mt-1">
                           {edu.icon}
                         </div>
                         <div className="flex-grow">
-                          <h4 className="font-inter font-semibold text-lg text-primary mb-1">
+                          <h4 className="font-inter font-semibold text-lg text-neon-primary mb-1">
                             {edu.level}
                           </h4>
                           <p className="font-medium text-foreground mb-1">
                             {edu.institution}
                           </p>
-                          <p className="text-accent font-medium mb-3">
+                          <p className="text-neon-accent font-medium mb-3 animate-neon-flicker">
                             {edu.status}
                           </p>
                           <p className="text-muted-foreground text-sm leading-relaxed">
@@ -128,23 +130,23 @@ const AboutSection = () => {
               </div>
 
               {/* Quick Stats */}
-              <div className="mt-8 p-6 bg-gradient-hero rounded-2xl text-white">
+              <div className="mt-8 p-6 bg-gradient-neon rounded-2xl text-background shadow-floating border border-primary/30 animate-glow-pulse">
                 <h4 className="font-playfair font-semibold text-xl mb-4">Quick Facts</h4>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-2xl font-bold text-accent">2nd</p>
+                    <p className="text-2xl font-bold text-background">2nd</p>
                     <p className="text-sm opacity-90">Year B.Tech Student</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-accent">90%</p>
+                    <p className="text-2xl font-bold text-background">90%</p>
                     <p className="text-sm opacity-90">School Academic Score</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-accent">Active</p>
+                    <p className="text-2xl font-bold text-background">Active</p>
                     <p className="text-sm opacity-90">Toastmaster Member</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-accent">KIET</p>
+                    <p className="text-2xl font-bold text-background">KIET</p>
                     <p className="text-sm opacity-90">Engineering College</p>
                   </div>
                 </div>
